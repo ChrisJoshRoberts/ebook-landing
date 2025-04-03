@@ -81,9 +81,8 @@
 <style>
   .chapter-preview {
     padding: 80px 0;
-    margin-left: 12vw;
-    margin-right: 20vw;
-    max-width: 1150px;
+    margin: 0 auto;
+    max-width: 1200px;
   }
   .chapter-container {
     display: flex;
