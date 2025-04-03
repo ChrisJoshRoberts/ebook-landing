@@ -38,13 +38,15 @@
   }
 ];
 
-  let selectedChapter = $state(1);
+  let selectedChapterNumber = $state(1);
+  let selectedChapter = $derived(chapters.find((chapter) => chapter.number === selectedChapterNumber));
+  
 
   /**
    * @param {{ number: number; title: string; strapline: string; description: string; }} chapter
    */
   const selectChapter = (chapter) => {
-    selectedChapter = chapter.number;
+    selectedChapterNumber = chapter.number;
   }
 </script>
 
@@ -56,8 +58,8 @@
       <li>
         <button class="chapter-title"
           aria-controls={`chapter-info-${chapter.number}`}
-          class:selected-chapter-title={selectedChapter === chapter.number}
-          aria-expanded={selectedChapter === chapter.number}
+          class:selected-chapter-title={selectedChapterNumber === chapter.number}
+          aria-expanded={selectedChapterNumber === chapter.number}
           onclick={() => selectChapter(chapter)}
         >
         <h3>
@@ -69,9 +71,9 @@
     </ul>
     <div class="chapter-info">
       <h3 class="chapter-strapline italic mb-s">
-        Understanding the Spanish system
+        {selectedChapter?.strapline}
       </h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dignissimos consectetur, et minus, optio commodi ullam earum incidunt quod vitae voluptates, quidem nobis sapiente deserunt nam molestiae exercitationem nostrum eveniet.</p>
+      <p>{selectedChapter?.description}</p>
     </div>
   </div>
 </section>
@@ -103,7 +105,6 @@
   }
   .selected-chapter-title {
     background-color: black;
- 
     width: 100%;
     display: block;
     padding: 20px 16px;
