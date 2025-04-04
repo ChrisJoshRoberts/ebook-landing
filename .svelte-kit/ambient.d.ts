@@ -26,6 +26,8 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const STRIPE_API_KEY: string;
+	export const PRICE_ID: string;
 	export const NVM_INC: string;
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
@@ -99,7 +101,7 @@ declare module '$env/static/private' {
  * ```
  */
 declare module '$env/static/public' {
-	
+	export const PUBLIC_STRIPE_KEY: string;
 }
 
 /**
@@ -118,6 +120,8 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		STRIPE_API_KEY: string;
+		PRICE_ID: string;
 		NVM_INC: string;
 		TERM_PROGRAM: string;
 		NODE: string;
@@ -198,6 +202,7 @@ declare module '$env/dynamic/private' {
  */
 declare module '$env/dynamic/public' {
 	export const env: {
+		PUBLIC_STRIPE_KEY: string;
 		[key: `PUBLIC_${string}`]: string | undefined;
 	}
 }
