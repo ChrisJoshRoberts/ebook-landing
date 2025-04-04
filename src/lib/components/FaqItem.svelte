@@ -1,13 +1,13 @@
 <script>
 import { ChevronDown } from 'lucide-svelte';
 
-let { question, answer } = $props();
+let { question, answer, isExpanded, ...props  } = $props();
 </script>
 
-<button class="container">
+<button class="container" {...props}>
 <div class="question-and-answer">
   <p class="question mb-s">{question}</p>
-  <p class="answer">{answer}</p>
+  <p class="answer" class:answer-expanded={isExpanded}>{answer}</p>
   <div class="chevron">
     <ChevronDown />
   </div>
@@ -32,6 +32,11 @@ let { question, answer } = $props();
     overflow: hidden;
     opacity: 0;
     transition: all 0.3s ease-out;
+  }
+  .answer-expanded {
+    max-height: 100px;
+    opacity: 1;
+    transition: all 0.3s ease-in;
   }
   .question-and-answer {
     display: flex;

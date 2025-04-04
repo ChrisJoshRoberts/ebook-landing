@@ -29,13 +29,24 @@
   }
 ];
 
+let questionCurrentlyExpanded = $state(-1);
+
+const toggleQuestion = (index) => {
+  questionCurrentlyExpanded = index;
+};
+
 </script>
 
 <section class="faq-section"> 
   <h2 class="mb-l">Frequently Asked Questions</h2>
   <div class="faq-container">
-    {#each faqs as faq}
-      <FaqItem question={faq.question} answer={faq.answer} />
+    {#each faqs as faq, index}
+      <FaqItem 
+        question={faq.question} 
+        answer={faq.answer} 
+        isExpanded={index === questionCurrentlyExpanded} 
+        onclick={() => toggleQuestion(index)}
+      />
     {/each}
   </div>
   <div class="additional-info mt-m">
