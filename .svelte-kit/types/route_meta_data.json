@@ -1,3 +1,8 @@
 {
-	"/": []
+	"/": [],
+	"/api/checkout": [
+		"src/routes/api/checkout/+server.js"
+	],
+	"/checkout/cancel": [],
+	"/checkout/success": []
 }

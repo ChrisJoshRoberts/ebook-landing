@@ -31,7 +31,9 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
+		"@stripe/stripe-js": "^7.0.0",
 		"lucide": "^0.487.0",
-		"lucide-svelte": "^0.487.0"
+		"lucide-svelte": "^0.487.0",
+		"stripe": "^18.0.0"
 	}
 }
