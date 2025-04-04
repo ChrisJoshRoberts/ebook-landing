@@ -8,7 +8,7 @@ let { question, answer, isExpanded, ...props  } = $props();
 <div class="question-and-answer">
   <p class="question mb-s">{question}</p>
   <p class="answer" class:answer-expanded={isExpanded}>{answer}</p>
-  <div class="chevron">
+  <div class="chevron" class:chevron-rotated={isExpanded}>
     <ChevronDown />
   </div>
 </div>
@@ -52,5 +52,10 @@ let { question, answer, isExpanded, ...props  } = $props();
     position: absolute;
     right: 0;
     height: 100%;
+    transition: all 0.3s ease;
+    transform: rotate(0deg);
   }
-</style>
+  .chevron-rotated {
+    transform: rotate(180deg);
+  }
+  </style>

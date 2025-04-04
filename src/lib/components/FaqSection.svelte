@@ -32,7 +32,7 @@
 let questionCurrentlyExpanded = $state(-1);
 
 const toggleQuestion = (index: number) => {
-  questionCurrentlyExpanded = index;
+  questionCurrentlyExpanded = questionCurrentlyExpanded === index ? -1 : index;
 };
 </script>
 
