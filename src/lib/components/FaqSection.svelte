@@ -8,7 +8,7 @@
     <FaqItem />
   </div>
   <div class="additional-info">
-    <Button>
+    <Button mode='dark'>
       BUY NOW
     </Button>
   </div>

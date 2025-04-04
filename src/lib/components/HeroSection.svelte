@@ -21,7 +21,7 @@
       repellendus vitae consequatur minus saepe animi voluptatibus voluptatum officia est, 
       eos molestiae, debitis quibusdam aliquid reiciendis sed recusandae!
     </p>
-    <Button>Purchase E-Book</Button>
+    <Button mode='light'>Purchase E-Book</Button>
   </div>
 </section>
 

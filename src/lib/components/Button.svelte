@@ -1,10 +1,27 @@
 <script>
-  let { children, ...props } = $props();
+  let { children,mode,  ...props } = $props();
 </script>
 
-<button {...props} class="white button">{@render children()}</button>
+<button {...props} class={mode === 'dark' ? 'button-dark' : 'white button'}>{@render children()}</button>
 
 <style>
+  .button-dark {
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    width: 25%;
+    padding: 1rem 0;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+    }
+  }
   .button {
     border: 1px solid white;
     background-color: transparent;
