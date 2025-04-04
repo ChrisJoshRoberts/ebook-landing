@@ -1,4 +1,4 @@
-<script>
+<script lang='ts'>
   import { FaqItem } from "$components";
 	import Button from "./Button.svelte";
 
@@ -31,10 +31,9 @@
 
 let questionCurrentlyExpanded = $state(-1);
 
-const toggleQuestion = (index) => {
+const toggleQuestion = (index: number) => {
   questionCurrentlyExpanded = index;
 };
-
 </script>
 
 <section class="faq-section"> 
